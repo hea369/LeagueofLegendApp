@@ -1,0 +1,6 @@
+framework module Pods_LeagueofLegendApp {
+  umbrella header "Pods-LeagueofLegendApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

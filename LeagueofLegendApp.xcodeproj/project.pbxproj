@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		619292292AC54A472E222804 /* Pods_LeagueofLegendApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */; };
 		D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F5290A52E30077E035 /* AppDelegate.swift */; };
 		D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F7290A52E30077E035 /* SceneDelegate.swift */; };
-		D864A2FA290A52E30077E035 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F9290A52E30077E035 /* ViewController.swift */; };
-		D864A2FD290A52E30077E035 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D864A2FB290A52E30077E035 /* Main.storyboard */; };
 		D864A2FF290A52E40077E035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D864A2FE290A52E40077E035 /* Assets.xcassets */; };
 		D864A302290A52E40077E035 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D864A300290A52E40077E035 /* LaunchScreen.storyboard */; };
+		D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A30A290A59770077E035 /* LoLChampionViewController.swift */; };
+		D864A30F290A5A370077E035 /* ChampionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */; };
+		D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A311290A5CD20077E035 /* LOLAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AE8900434B5824682721EA2 /* Pods-LeagueofLegendApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueofLegendApp.release.xcconfig"; path = "Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp.release.xcconfig"; sourceTree = "<group>"; };
+		861A84F38E71E82D3918E85C /* Pods-LeagueofLegendApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueofLegendApp.debug.xcconfig"; path = "Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueofLegendApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D864A2F2290A52E30077E035 /* LeagueofLegendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueofLegendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D864A2F5290A52E30077E035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D864A2F7290A52E30077E035 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D864A2F9290A52E30077E035 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D864A2FC290A52E30077E035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D864A2FE290A52E40077E035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D864A301290A52E40077E035 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D864A303290A52E40077E035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D864A30A290A59770077E035 /* LoLChampionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLChampionViewController.swift; sourceTree = "<group>"; };
+		D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D864A311290A5CD20077E035 /* LOLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				619292292AC54A472E222804 /* Pods_LeagueofLegendApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032E5166B2BDB9D1895D5774 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				861A84F38E71E82D3918E85C /* Pods-LeagueofLegendApp.debug.xcconfig */,
+				1AE8900434B5824682721EA2 /* Pods-LeagueofLegendApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9939009FBD26CAFCE0BBB291 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D864A2E9290A52E30077E035 = {
 			isa = PBXGroup;
 			children = (
 				D864A2F4290A52E30077E035 /* LeagueofLegendApp */,
 				D864A2F3290A52E30077E035 /* Products */,
+				032E5166B2BDB9D1895D5774 /* Pods */,
+				9939009FBD26CAFCE0BBB291 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +82,33 @@
 		D864A2F4290A52E30077E035 /* LeagueofLegendApp */ = {
 			isa = PBXGroup;
 			children = (
+				D864A310290A5CC30077E035 /* API */,
+				D864A309290A59010077E035 /* 첫번째화면 */,
 				D864A2F5290A52E30077E035 /* AppDelegate.swift */,
 				D864A2F7290A52E30077E035 /* SceneDelegate.swift */,
-				D864A2F9290A52E30077E035 /* ViewController.swift */,
-				D864A2FB290A52E30077E035 /* Main.storyboard */,
 				D864A2FE290A52E40077E035 /* Assets.xcassets */,
 				D864A300290A52E40077E035 /* LaunchScreen.storyboard */,
 				D864A303290A52E40077E035 /* Info.plist */,
 			);
 			path = LeagueofLegendApp;
+			sourceTree = "<group>";
+		};
+		D864A309290A59010077E035 /* 첫번째화면 */ = {
+			isa = PBXGroup;
+			children = (
+				D864A30A290A59770077E035 /* LoLChampionViewController.swift */,
+				D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */,
+			);
+			name = "첫번째화면";
+			path = "첫번째화면";
+			sourceTree = "<group>";
+		};
+		D864A310290A5CC30077E035 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D864A311290A5CD20077E035 /* LOLAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D864A306290A52E40077E035 /* Build configuration list for PBXNativeTarget "LeagueofLegendApp" */;
 			buildPhases = (
+				51479D523C1D7DD015F20DBC /* [CP] Check Pods Manifest.lock */,
 				D864A2EE290A52E30077E035 /* Sources */,
 				D864A2EF290A52E30077E035 /* Frameworks */,
 				D864A2F0290A52E30077E035 /* Resources */,
+				D5A4308B9262EA629E59E3EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +173,69 @@
 			files = (
 				D864A302290A52E40077E035 /* LaunchScreen.storyboard in Resources */,
 				D864A2FF290A52E40077E035 /* Assets.xcassets in Resources */,
-				D864A2FD290A52E30077E035 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51479D523C1D7DD015F20DBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeagueofLegendApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5A4308B9262EA629E59E3EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D864A2EE290A52E30077E035 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D864A2FA290A52E30077E035 /* ViewController.swift in Sources */,
 				D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */,
 				D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */,
+				D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */,
+				D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */,
+				D864A30F290A5A370077E035 /* ChampionDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D864A2FB290A52E30077E035 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D864A2FC290A52E30077E035 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D864A300290A52E40077E035 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +363,7 @@
 		};
 		D864A307290A52E40077E035 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 861A84F38E71E82D3918E85C /* Pods-LeagueofLegendApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +374,6 @@
 				INFOPLIST_FILE = LeagueofLegendApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +391,7 @@
 		};
 		D864A308290A52E40077E035 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE8900434B5824682721EA2 /* Pods-LeagueofLegendApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +402,6 @@
 				INFOPLIST_FILE = LeagueofLegendApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
