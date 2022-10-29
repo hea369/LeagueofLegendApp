@@ -12,7 +12,6 @@ class ChampionDetailTableViewCell: UITableViewCell {
     // 이미지뷰1, 레이블7, 막대그래프 3
     let campionImage: UIImageView = {
         let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .red
         return view
     }()
@@ -33,7 +32,15 @@ class ChampionDetailTableViewCell: UITableViewCell {
         return label
     }()
     
-    let campionLoseRate: UILabel = {
+    let campionPickRate: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 10)
+        label.textColor = .black
+        return label
+    }()
+    
+    let campionBanRate: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -66,7 +73,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
         addSubview(campionName)
         addSubview(campionImage)
         addSubview(campionWinRate)
-        addSubview(campionLoseRate)
+        addSubview(campionPickRate)
+        addSubview(campionBanRate)
     }
     
     func layoutSetting() {
@@ -85,8 +93,13 @@ class ChampionDetailTableViewCell: UITableViewCell {
             make.width.equalTo(50)
             make.left.equalTo(campionImage.snp.right).offset(20)
         }
-        campionLoseRate.snp.makeConstraints { make in
+        campionPickRate.snp.makeConstraints { make in
             make.top.equalTo(campionWinRate.snp.bottom).offset(10)
+            make.width.equalTo(50)
+            make.left.equalTo(campionImage.snp.right).offset(20)
+        }
+        campionBanRate.snp.makeConstraints { make in
+            make.top.equalTo(campionPickRate.snp.bottom).offset(10)
             make.width.equalTo(50)
             make.left.equalTo(campionImage.snp.right).offset(20)
         }

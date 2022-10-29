@@ -18,8 +18,13 @@ class LoLChampionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     func setup() {
@@ -57,6 +62,8 @@ extension LoLChampionViewController: UITableViewDataSource {
         cell.campionName.text = "챔피언이름"
         cell.campionImage.image = UIImage(systemName: "star")
         cell.campionWinRate.text = "승률"
+        cell.campionPickRate.text = "픽률"
+        cell.campionBanRate.text = "벤률"
         
         return cell
     }
@@ -65,4 +72,12 @@ extension LoLChampionViewController: UITableViewDataSource {
         return 200
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        
+        detailViewController.campionImage.image = UIImage(systemName: "star")
+        detailViewController.campionName.text = "팍쒸"
+        detailViewController.campionIp.text = "Ip"
+    }
 }

@@ -15,6 +15,10 @@
 		D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A30A290A59770077E035 /* LoLChampionViewController.swift */; };
 		D864A30F290A5A370077E035 /* ChampionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */; };
 		D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A311290A5CD20077E035 /* LOLAPI.swift */; };
+		D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A319290BCDF90077E035 /* DetailViewController.swift */; };
+		D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A31D290CF1CB0077E035 /* NewsViewController.swift */; };
+		D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */; };
+		D864A324290CF8780077E035 /* SerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A323290CF8780077E035 /* SerchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		D864A30A290A59770077E035 /* LoLChampionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLChampionViewController.swift; sourceTree = "<group>"; };
 		D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D864A311290A5CD20077E035 /* LOLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLAPI.swift; sourceTree = "<group>"; };
+		D864A319290BCDF90077E035 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D864A31D290CF1CB0077E035 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
+		D864A323290CF8780077E035 /* SerchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				D864A310290A5CC30077E035 /* API */,
+				D864A31F290CF4AA0077E035 /* TabBar */,
 				D864A309290A59010077E035 /* 첫번째화면 */,
+				D864A31C290CF19D0077E035 /* 두번째화면 */,
+				D864A322290CF8310077E035 /* 세번째화면 */,
 				D864A2F5290A52E30077E035 /* AppDelegate.swift */,
 				D864A2F7290A52E30077E035 /* SceneDelegate.swift */,
 				D864A2FE290A52E40077E035 /* Assets.xcassets */,
@@ -98,6 +109,7 @@
 			children = (
 				D864A30A290A59770077E035 /* LoLChampionViewController.swift */,
 				D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */,
+				D864A31B290BCE010077E035 /* 첫번째화면 세부내용 */,
 			);
 			name = "첫번째화면";
 			path = "첫번째화면";
@@ -109,6 +121,41 @@
 				D864A311290A5CD20077E035 /* LOLAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		D864A31B290BCE010077E035 /* 첫번째화면 세부내용 */ = {
+			isa = PBXGroup;
+			children = (
+				D864A319290BCDF90077E035 /* DetailViewController.swift */,
+			);
+			name = "첫번째화면 세부내용";
+			path = "두번째화면";
+			sourceTree = "<group>";
+		};
+		D864A31C290CF19D0077E035 /* 두번째화면 */ = {
+			isa = PBXGroup;
+			children = (
+				D864A31D290CF1CB0077E035 /* NewsViewController.swift */,
+			);
+			name = "두번째화면";
+			path = "두번째화면";
+			sourceTree = "<group>";
+		};
+		D864A31F290CF4AA0077E035 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D864A322290CF8310077E035 /* 세번째화면 */ = {
+			isa = PBXGroup;
+			children = (
+				D864A323290CF8780077E035 /* SerchViewController.swift */,
+			);
+			name = "세번째화면";
+			path = "세번째화면";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +274,11 @@
 			files = (
 				D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */,
 				D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */,
+				D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */,
 				D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */,
+				D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */,
+				D864A324290CF8780077E035 /* SerchViewController.swift in Sources */,
+				D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */,
 				D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */,
 				D864A30F290A5A370077E035 /* ChampionDetailTableViewCell.swift in Sources */,
 			);
