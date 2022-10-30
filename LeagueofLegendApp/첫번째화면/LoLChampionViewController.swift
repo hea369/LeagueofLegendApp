@@ -11,6 +11,8 @@ import Alamofire
 
 class LoLChampionViewController: UIViewController {
     
+    var test: [Welcome] = []
+    
     let tableiw: UITableView = {
         let tableview = UITableView()
         return tableview
@@ -25,6 +27,12 @@ class LoLChampionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+    }
+    
+    func testAPI(){
+        LoLAPI.callAPI { data in
+            self.test
+        }
     }
     
     func setup() {
@@ -59,9 +67,8 @@ extension LoLChampionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionDetailTableViewCell") as? ChampionDetailTableViewCell else { return UITableViewCell() }
         
-        cell.campionName.text = "챔피언이름"
         cell.campionImage.image = UIImage(systemName: "star")
-        cell.campionWinRate.text = "승률"
+        cell.campionWinRate.text = test.startIndex
         cell.campionPickRate.text = "픽률"
         cell.campionBanRate.text = "벤률"
         
@@ -77,7 +84,7 @@ extension LoLChampionViewController: UITableViewDataSource {
         self.navigationController?.pushViewController(detailViewController, animated: true)
         
         detailViewController.campionImage.image = UIImage(systemName: "star")
-        detailViewController.campionName.text = "팍쒸"
+        detailViewController.campionName.text = "이름"
         detailViewController.campionIp.text = "Ip"
     }
 }

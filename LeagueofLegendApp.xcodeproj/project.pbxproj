@@ -19,6 +19,7 @@
 		D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A31D290CF1CB0077E035 /* NewsViewController.swift */; };
 		D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */; };
 		D864A324290CF8780077E035 /* SerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A323290CF8780077E035 /* SerchViewController.swift */; };
+		D864A327290CFCF00077E035 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A326290CFCEF0077E035 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D864A31D290CF1CB0077E035 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D864A323290CF8780077E035 /* SerchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchViewController.swift; sourceTree = "<group>"; };
+		D864A326290CFCEF0077E035 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		D864A2F4290A52E30077E035 /* LeagueofLegendApp */ = {
 			isa = PBXGroup;
 			children = (
+				D864A325290CFCE00077E035 /* Model */,
 				D864A310290A5CC30077E035 /* API */,
 				D864A31F290CF4AA0077E035 /* TabBar */,
 				D864A309290A59010077E035 /* 첫번째화면 */,
@@ -156,6 +159,14 @@
 			);
 			name = "세번째화면";
 			path = "세번째화면";
+			sourceTree = "<group>";
+		};
+		D864A325290CFCE00077E035 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D864A326290CFCEF0077E035 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */,
 				D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */,
 				D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */,
+				D864A327290CFCF00077E035 /* Model.swift in Sources */,
 				D864A324290CF8780077E035 /* SerchViewController.swift in Sources */,
 				D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */,
 				D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */,
