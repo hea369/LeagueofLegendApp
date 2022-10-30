@@ -7,16 +7,20 @@
 
 import Foundation
 
-let apiKey = "RGAPI-a40f5f52-90b7-4860-806d-a9dcb4557669"
+let apiKey = "RGAPI-f8aa7694-24de-44fc-b30f-5a1e913585d3"
 
 class LoLAPI {
-   class func callAPI(completion: @escaping (WelcomeElement) -> Void) {
+   class func callAPI(completion: @escaping (LOLChampion) -> Void) {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        let urlString = "https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/B5JrmMGdlL2FTTIFRzFDy-hJahMIuxFoZxzIwpTKhqN5dw"
+        let urlString = "http://ddragon.leagueoflegends.com/cdn/12.20.1/data/ko_KR/champion.json"
 
         guard let url = URL(string: urlString) else { return }
-        
+       
+//       var request = URLRequest(url: url)
+//       request.httpMethod = "GET"
+//       request.setValue("RGAPI-f8aa7694-24de-44fc-b30f-5a1e913585d3", forHTTPHeaderField: "X-Riot-Token")
+//
         let dataTask = session.dataTask(with: url) { data, response, error in
             let successRange = 200..<300
             guard error == nil, let statusCode = (response as? HTTPURLResponse)?.statusCode, successRange.contains(statusCode) else {
@@ -29,7 +33,7 @@ class LoLAPI {
             }
             print("나타나\(resultData)")
             let decoder = JSONDecoder()
-            let decodedData = try! decoder.decode(WelcomeElement.self, from: resultData)
+            let decodedData = try! decoder.decode(LOLChampion.self, from: resultData)
             print("얼마나오냐\(decodedData)")
             DispatchQueue.main.async {
                 completion(decodedData)

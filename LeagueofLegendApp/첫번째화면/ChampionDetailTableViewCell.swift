@@ -104,7 +104,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
             make.left.equalTo(campionImage.snp.right).offset(20)
         }
     }
-    func setModel(model: WelcomeElement) {
-        campionName.text = "챔편아디\(model.championID)"
+    func setModel(model: Champion) {
+        campionName.text = model.name
+        
     }
 }

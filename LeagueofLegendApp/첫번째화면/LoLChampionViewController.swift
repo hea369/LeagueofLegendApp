@@ -11,7 +11,7 @@ import Alamofire
 
 class LoLChampionViewController: UIViewController {
     
-    var test: [Welcome] = []
+    var model: [Champion] = []
     
     let tableiw: UITableView = {
         let tableview = UITableView()
@@ -22,6 +22,7 @@ class LoLChampionViewController: UIViewController {
         super.viewDidLoad()
 
         setup()
+        testAPI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +32,8 @@ class LoLChampionViewController: UIViewController {
     
     func testAPI(){
         LoLAPI.callAPI { data in
-            self.test
+            self.model = Array(data.data.values)
+            self.tableiw.reloadData()
         }
     }
     
@@ -61,14 +63,19 @@ extension LoLChampionViewController: UITableViewDelegate {
 
 extension LoLChampionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionDetailTableViewCell") as? ChampionDetailTableViewCell else { return UITableViewCell() }
         
+        
+        
+        let championInfo = model[indexPath.row]
+        cell.setModel(model: championInfo)
+        
         cell.campionImage.image = UIImage(systemName: "star")
-        cell.campionWinRate.text = test.startIndex
+//        cell.campionWinRate.text = test.startIndex
         cell.campionPickRate.text = "픽률"
         cell.campionBanRate.text = "벤률"
         
