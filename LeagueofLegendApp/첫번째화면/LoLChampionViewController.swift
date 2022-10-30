@@ -11,7 +11,9 @@ import Alamofire
 
 class LoLChampionViewController: UIViewController {
     
-    var model: [Champion] = []
+    var model: LOLChampion?
+    
+    var modelDum: [Champion] = []
     
     let tableiw: UITableView = {
         let tableview = UITableView()
@@ -20,9 +22,8 @@ class LoLChampionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        callAPI()
         setup()
-        testAPI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,12 +31,25 @@ class LoLChampionViewController: UIViewController {
         
     }
     
-    func testAPI(){
-        LoLAPI.callAPI { data in
-            self.model = Array(data.data.values)
+    func callAPI(){
+        AF.request("http://ddragon.leagueoflegends.com/cdn/12.20.1/data/ko_KR/champion.json").response { response in
+            debugPrint(response)
+            guard let data = response.data else { return }
+            let model = try! JSONDecoder().decode(LOLChampion.self, from: data)
+            print(model.data.values.count)
+            self.model = model
+            self.modelDum = Array(model.data.values)
             self.tableiw.reloadData()
         }
     }
+    
+    //  urlssection 통신
+    //    func testAPI(){
+    //        LoLAPI.callAPI { data in
+    //            self.modelDum = Array(data.data.values)
+    //            self.tableiw.reloadData()
+    //        }
+    //    }
     
     func setup() {
         view.backgroundColor = .systemBackground
@@ -54,7 +68,7 @@ class LoLChampionViewController: UIViewController {
             tableiw.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
         ])
     }
-
+    
 }
 
 extension LoLChampionViewController: UITableViewDelegate {
@@ -63,21 +77,14 @@ extension LoLChampionViewController: UITableViewDelegate {
 
 extension LoLChampionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return model?.data.values.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionDetailTableViewCell") as? ChampionDetailTableViewCell else { return UITableViewCell() }
         
-        
-        
-        let championInfo = model[indexPath.row]
+        let championInfo = modelDum[indexPath.row]
         cell.setModel(model: championInfo)
-        
-        cell.campionImage.image = UIImage(systemName: "star")
-//        cell.campionWinRate.text = test.startIndex
-        cell.campionPickRate.text = "픽률"
-        cell.campionBanRate.text = "벤률"
         
         return cell
     }

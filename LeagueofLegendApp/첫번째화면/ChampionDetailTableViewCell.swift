@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ChampionDetailTableViewCell: UITableViewCell {
     
@@ -107,5 +108,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     func setModel(model: Champion) {
         campionName.text = model.name
         
+        let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
+        campionImage.kf.setImage(with: url)
     }
 }
