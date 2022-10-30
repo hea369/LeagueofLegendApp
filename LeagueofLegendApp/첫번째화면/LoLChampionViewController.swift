@@ -14,6 +14,7 @@ class LoLChampionViewController: UIViewController {
     var model: LOLChampion?
     
     var modelDum: [Champion] = []
+    var arrayDum: [Champion] = []
     
     let tableiw: UITableView = {
         let tableview = UITableView()
@@ -56,17 +57,11 @@ class LoLChampionViewController: UIViewController {
         tableiw.delegate = self
         tableiw.dataSource = self
         tableiw.register(ChampionDetailTableViewCell.self, forCellReuseIdentifier: "ChampionDetailTableViewCell")
-        tableiw.rowHeight = UITableView.automaticDimension
-        tableiw.estimatedRowHeight = UITableView.automaticDimension
         view.addSubview(tableiw)
-        tableiw.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            tableiw.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableiw.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableiw.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableiw.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-        ])
+        tableiw.snp.makeConstraints { make in
+            make.width.height.equalTo(self.view)
+        }
     }
     
 }
@@ -90,7 +85,7 @@ extension LoLChampionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 150
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

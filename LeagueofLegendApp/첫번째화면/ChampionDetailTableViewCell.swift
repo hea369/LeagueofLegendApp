@@ -11,13 +11,13 @@ import Kingfisher
 class ChampionDetailTableViewCell: UITableViewCell {
     
     // 이미지뷰1, 레이블7, 막대그래프 3
-    let campionImage: UIImageView = {
+    let championImage: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
         return view
     }()
     
-    let campionName: UILabel = {
+    let championName: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -25,7 +25,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         return label
     }()
     
-    let campionWinRate: UILabel = {
+    let championWinRate: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -33,7 +33,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         return label
     }()
     
-    let campionPickRate: UILabel = {
+    let championPickRate: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -41,7 +41,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         return label
     }()
     
-    let campionBanRate: UILabel = {
+    let championBanRate: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -71,44 +71,44 @@ class ChampionDetailTableViewCell: UITableViewCell {
     }
     
     func addView() {
-        addSubview(campionName)
-        addSubview(campionImage)
-        addSubview(campionWinRate)
-        addSubview(campionPickRate)
-        addSubview(campionBanRate)
+        addSubview(championName)
+        addSubview(championImage)
+        addSubview(championWinRate)
+        addSubview(championPickRate)
+        addSubview(championBanRate)
     }
     
     func layoutSetting() {
-        campionImage.snp.makeConstraints { make in
+        championImage.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top)
-            make.width.height.equalTo(150)
+            make.width.height.equalTo(120)
             make.left.equalTo(contentView.snp.right)
+            make.bottom.equalTo(contentView.snp.bottom)
         }
-        campionName.snp.makeConstraints { make in
+        championName.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.width.equalTo(50)
-            make.left.equalTo(campionImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(20)
         }
-        campionWinRate.snp.makeConstraints { make in
-            make.top.equalTo(campionName.snp.bottom).offset(10)
+        championWinRate.snp.makeConstraints { make in
+            make.top.equalTo(championName.snp.bottom).offset(10)
             make.width.equalTo(50)
-            make.left.equalTo(campionImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(20)
         }
-        campionPickRate.snp.makeConstraints { make in
-            make.top.equalTo(campionWinRate.snp.bottom).offset(10)
+        championPickRate.snp.makeConstraints { make in
+            make.top.equalTo(championWinRate.snp.bottom).offset(10)
             make.width.equalTo(50)
-            make.left.equalTo(campionImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(20)
         }
-        campionBanRate.snp.makeConstraints { make in
-            make.top.equalTo(campionPickRate.snp.bottom).offset(10)
+        championBanRate.snp.makeConstraints { make in
+            make.top.equalTo(championPickRate.snp.bottom).offset(10)
             make.width.equalTo(50)
-            make.left.equalTo(campionImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(20)
         }
     }
     func setModel(model: Champion) {
-        campionName.text = model.name
-        
+        championName.text = model.name
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
-        campionImage.kf.setImage(with: url)
+        championImage.kf.setImage(with: url)
     }
 }
