@@ -144,8 +144,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
     }
     
-    func labelBackgroundColor(model: UILabel ){
-
+    func labelBackgroundColor(model: UILabel){
         if transformTagsName.first == "전사"{
             model.backgroundColor = .blue
         } else if transformTagsName.first == "탱커" {
@@ -161,6 +160,22 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
     }
     
+    func labelBackgroundColor2(model: UILabel){
+        if transformTagsName.last == "전사"{
+            model.backgroundColor = .blue
+        } else if transformTagsName.last == "탱커" {
+            model.backgroundColor = .red
+        } else if transformTagsName.last == "마법사" {
+            model.backgroundColor = .green
+        } else if transformTagsName.last == "암살자" {
+            model.backgroundColor = .gray
+        } else if transformTagsName.last == "서폿터" {
+            model.backgroundColor = .orange
+        } else {
+            model.backgroundColor = .yellow
+        }
+    }
+    
     func setModel(model: Champion) {
         championName.text = "\(model.name),"
         for a in model.tags{
@@ -170,14 +185,14 @@ class ChampionDetailTableViewCell: UITableViewCell {
             transformTagsName.append(tagsName[b].translate())
         }
         if transformTagsName.first == transformTagsName.last{
+            labelBackgroundColor(model: championTitle)
             championTitle.text = transformTagsName.first
             championSubTitle.text = ""
-            labelBackgroundColor(model: championTitle)
         } else {
-            championTitle.text = transformTagsName.first
             labelBackgroundColor(model: championTitle)
+            championTitle.text = transformTagsName.first
+            labelBackgroundColor2(model: championSubTitle)
             championSubTitle.text = transformTagsName.last
-            labelBackgroundColor(model: championSubTitle)
         }
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
         championImage.kf.setImage(with: url)
