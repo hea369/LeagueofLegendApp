@@ -10,6 +10,9 @@ import Kingfisher
 
 class ChampionDetailTableViewCell: UITableViewCell {
     
+    var tagsName: [String] = []
+    var transformTagsName: [String] = []
+    
     // 이미지뷰1, 레이블7, 막대그래프 3
     let championImage: UIImageView = {
         let view = UIImageView()
@@ -22,6 +25,29 @@ class ChampionDetailTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
         label.textColor = .black
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    let championTitle: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
+        label.numberOfLines = 1
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 10
+        return label
+    }()
+    
+    let championSubTitle: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
+        label.numberOfLines = 1
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -76,20 +102,31 @@ class ChampionDetailTableViewCell: UITableViewCell {
         addSubview(championWinRate)
         addSubview(championPickRate)
         addSubview(championBanRate)
+        addSubview(championTitle)
+        addSubview(championSubTitle)
     }
     
     func layoutSetting() {
         championImage.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top)
+            make.top.equalTo(contentView.snp.top).offset(20)
             make.width.height.equalTo(120)
             make.left.equalTo(contentView.snp.right)
-            make.bottom.equalTo(contentView.snp.bottom)
         }
         championName.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
-            make.width.equalTo(50)
             make.left.equalTo(championImage.snp.right).offset(20)
         }
+        
+        championTitle.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.left.equalTo(championName.snp.right).offset(5)
+        }
+        
+        championSubTitle.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.left.equalTo(championTitle.snp.right).offset(5)
+        }
+        
         championWinRate.snp.makeConstraints { make in
             make.top.equalTo(championName.snp.bottom).offset(10)
             make.width.equalTo(50)
@@ -106,8 +143,42 @@ class ChampionDetailTableViewCell: UITableViewCell {
             make.left.equalTo(championImage.snp.right).offset(20)
         }
     }
+    
+    func labelBackgroundColor(model: UILabel ){
+
+        if transformTagsName.first == "전사"{
+            model.backgroundColor = .blue
+        } else if transformTagsName.first == "탱커" {
+            model.backgroundColor = .red
+        } else if transformTagsName.first == "마법사" {
+            model.backgroundColor = .green
+        } else if transformTagsName.first == "암살자" {
+            model.backgroundColor = .gray
+        } else if transformTagsName.first == "서폿터" {
+            model.backgroundColor = .orange
+        } else {
+            model.backgroundColor = .yellow
+        }
+    }
+    
     func setModel(model: Champion) {
-        championName.text = model.name
+        championName.text = "\(model.name),"
+        for a in model.tags{
+            tagsName.append(a.rawValue)
+        }
+        for b in 0..<tagsName.count{
+            transformTagsName.append(tagsName[b].translate())
+        }
+        if transformTagsName.first == transformTagsName.last{
+            championTitle.text = transformTagsName.first
+            championSubTitle.text = ""
+            labelBackgroundColor(model: championTitle)
+        } else {
+            championTitle.text = transformTagsName.first
+            labelBackgroundColor(model: championTitle)
+            championSubTitle.text = transformTagsName.last
+            labelBackgroundColor(model: championSubTitle)
+        }
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
         championImage.kf.setImage(with: url)
     }

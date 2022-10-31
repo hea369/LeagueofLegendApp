@@ -20,6 +20,7 @@
 		D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */; };
 		D864A324290CF8780077E035 /* SerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A323290CF8780077E035 /* SerchViewController.swift */; };
 		D864A327290CFCF00077E035 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A326290CFCEF0077E035 /* Model.swift */; };
+		D864A32A290F83460077E035 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A329290F83460077E035 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D864A323290CF8780077E035 /* SerchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchViewController.swift; sourceTree = "<group>"; };
 		D864A326290CFCEF0077E035 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D864A329290F83460077E035 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,12 +94,13 @@
 		D864A2F4290A52E30077E035 /* LeagueofLegendApp */ = {
 			isa = PBXGroup;
 			children = (
+				D864A328290F82FB0077E035 /* StringExtension */,
 				D864A325290CFCE00077E035 /* Model */,
 				D864A310290A5CC30077E035 /* API */,
 				D864A31F290CF4AA0077E035 /* TabBar */,
-				D864A309290A59010077E035 /* 첫번째화면 */,
-				D864A31C290CF19D0077E035 /* 두번째화면 */,
-				D864A322290CF8310077E035 /* 세번째화면 */,
+				D864A309290A59010077E035 /* FirstPage */,
+				D864A31C290CF19D0077E035 /* SecondPage */,
+				D864A322290CF8310077E035 /* ThirdPage */,
 				D864A2F5290A52E30077E035 /* AppDelegate.swift */,
 				D864A2F7290A52E30077E035 /* SceneDelegate.swift */,
 				D864A2FE290A52E40077E035 /* Assets.xcassets */,
@@ -107,14 +110,14 @@
 			path = LeagueofLegendApp;
 			sourceTree = "<group>";
 		};
-		D864A309290A59010077E035 /* 첫번째화면 */ = {
+		D864A309290A59010077E035 /* FirstPage */ = {
 			isa = PBXGroup;
 			children = (
 				D864A30A290A59770077E035 /* LoLChampionViewController.swift */,
 				D864A30E290A5A370077E035 /* ChampionDetailTableViewCell.swift */,
-				D864A31B290BCE010077E035 /* 첫번째화면 세부내용 */,
+				D864A31B290BCE010077E035 /* FirstPageDetail */,
 			);
-			name = "첫번째화면";
+			name = FirstPage;
 			path = "첫번째화면";
 			sourceTree = "<group>";
 		};
@@ -126,21 +129,21 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		D864A31B290BCE010077E035 /* 첫번째화면 세부내용 */ = {
+		D864A31B290BCE010077E035 /* FirstPageDetail */ = {
 			isa = PBXGroup;
 			children = (
 				D864A319290BCDF90077E035 /* DetailViewController.swift */,
 			);
-			name = "첫번째화면 세부내용";
+			name = FirstPageDetail;
 			path = "두번째화면";
 			sourceTree = "<group>";
 		};
-		D864A31C290CF19D0077E035 /* 두번째화면 */ = {
+		D864A31C290CF19D0077E035 /* SecondPage */ = {
 			isa = PBXGroup;
 			children = (
 				D864A31D290CF1CB0077E035 /* NewsViewController.swift */,
 			);
-			name = "두번째화면";
+			name = SecondPage;
 			path = "두번째화면";
 			sourceTree = "<group>";
 		};
@@ -152,12 +155,12 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		D864A322290CF8310077E035 /* 세번째화면 */ = {
+		D864A322290CF8310077E035 /* ThirdPage */ = {
 			isa = PBXGroup;
 			children = (
 				D864A323290CF8780077E035 /* SerchViewController.swift */,
 			);
-			name = "세번째화면";
+			name = ThirdPage;
 			path = "세번째화면";
 			sourceTree = "<group>";
 		};
@@ -167,6 +170,14 @@
 				D864A326290CFCEF0077E035 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D864A328290F82FB0077E035 /* StringExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D864A329290F83460077E035 /* Extension.swift */,
+			);
+			path = StringExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */,
 				D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */,
 				D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */,
+				D864A32A290F83460077E035 /* Extension.swift in Sources */,
 				D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */,
 				D864A327290CFCF00077E035 /* Model.swift in Sources */,
 				D864A324290CF8780077E035 /* SerchViewController.swift in Sources */,

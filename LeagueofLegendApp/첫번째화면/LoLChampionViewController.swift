@@ -14,7 +14,6 @@ class LoLChampionViewController: UIViewController {
     var model: LOLChampion?
     
     var modelDum: [Champion] = []
-    var arrayDum: [Champion] = []
     
     let tableiw: UITableView = {
         let tableview = UITableView()
@@ -37,7 +36,6 @@ class LoLChampionViewController: UIViewController {
             debugPrint(response)
             guard let data = response.data else { return }
             let model = try! JSONDecoder().decode(LOLChampion.self, from: data)
-            print(model.data.values.count)
             self.model = model
             self.modelDum = Array(model.data.values)
             self.tableiw.reloadData()
@@ -63,7 +61,6 @@ class LoLChampionViewController: UIViewController {
             make.width.height.equalTo(self.view)
         }
     }
-    
 }
 
 extension LoLChampionViewController: UITableViewDelegate {
