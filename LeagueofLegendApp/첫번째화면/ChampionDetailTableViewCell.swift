@@ -25,29 +25,36 @@ class ChampionDetailTableViewCell: UITableViewCell {
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .black
-        label.numberOfLines = 1
         return label
     }()
     
     let championTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .black
-        label.numberOfLines = 1
-        label.clipsToBounds = true
-        label.layer.cornerRadius = 10
         return label
     }()
     
-    let championSubTitle: UILabel = {
+    let championPosition: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .black
+        label.textColor = .white
         label.numberOfLines = 1
         label.clipsToBounds = true
-        label.layer.cornerRadius = 10
+        label.layer.cornerRadius = 5
+        return label
+    }()
+    
+    let championPosition2: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 14)
+        label.textColor = .white
+        label.numberOfLines = 1
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 5
         return label
     }()
     
@@ -103,7 +110,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
         addSubview(championPickRate)
         addSubview(championBanRate)
         addSubview(championTitle)
-        addSubview(championSubTitle)
+        addSubview(championPosition)
+        addSubview(championPosition2)
     }
     
     func layoutSetting() {
@@ -119,13 +127,18 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
         
         championTitle.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.left.equalTo(championName.snp.right).offset(3)
+        }
+        
+        championPosition.snp.makeConstraints { make in
             make.top.equalTo(championName.snp.top).offset(20)
             make.left.equalTo(championImage.snp.right).offset(20)
         }
         
-        championSubTitle.snp.makeConstraints { make in
+        championPosition2.snp.makeConstraints { make in
             make.top.equalTo(championName.snp.top).offset(20)
-            make.left.equalTo(championTitle.snp.right).offset(5)
+            make.left.equalTo(championImage.snp.right).offset(60)
         }
         
         championWinRate.snp.makeConstraints { make in
@@ -157,7 +170,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         } else if transformTagsName.first == "서폿터" {
             model.backgroundColor = .orange
         } else {
-            model.backgroundColor = .yellow
+            model.backgroundColor = .gray
         }
     }
     
@@ -173,7 +186,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         } else if transformTagsName.last == "서폿터" {
             model.backgroundColor = .orange
         } else {
-            model.backgroundColor = .yellow
+            model.backgroundColor = .gray
         }
     }
     
@@ -186,15 +199,16 @@ class ChampionDetailTableViewCell: UITableViewCell {
             transformTagsName.append(tagsName[b].translate())
         }
         if transformTagsName.first == transformTagsName.last{
-            labelBackgroundColor(model: championTitle)
-            championTitle.text = transformTagsName.first
-            championSubTitle.text = ""
+            labelBackgroundColor(model: championPosition)
+            championPosition.text = transformTagsName.first
+            championPosition2.text = ""
         } else {
-            labelBackgroundColor(model: championTitle)
-            championTitle.text = transformTagsName.first
-            labelBackgroundColor2(model: championSubTitle)
-            championSubTitle.text = transformTagsName.last
+            labelBackgroundColor(model: championPosition)
+            championPosition.text = transformTagsName.first
+            labelBackgroundColor2(model: championPosition2)
+            championPosition2.text = transformTagsName.last
         }
+        championTitle.text = model.title
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
         championImage.kf.setImage(with: url)
     }

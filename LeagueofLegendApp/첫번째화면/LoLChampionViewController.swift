@@ -26,12 +26,11 @@ class LoLChampionViewController: UIViewController {
         return searchBar
     }()
     
-//    let backBarkButtonItem: UIBarButtonItem = {
-//        let backButton = UIBarButtonItem()
-//        backButton.title = ""
-//        backButton.setImag
-//        return backButton
-//    }()
+    let backBarkButtonItem: UIBarButtonItem = {
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        return backButton
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
