@@ -113,10 +113,12 @@ extension LoLChampionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController = DetailViewController()
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+       
+        let championInfo = modelDum[indexPath.row]
+        detailViewController.setModel(model: championInfo)
         
-        detailViewController.campionImage.image = UIImage(systemName: "star")
-        detailViewController.campionName.text = "이름"
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    
         detailViewController.campionIp.text = "Ip"
     }
 }

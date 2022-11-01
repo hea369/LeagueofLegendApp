@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailViewController: UIViewController {
     
-    let viewBackground: UIView = {
-        let view = UIView()
+    var model: LOLChampion?
+    
+    let backgroundImage: UIImageView = {
+        let view = UIImageView()
         view.backgroundColor = .yellow
         return view
     }()
@@ -21,7 +24,7 @@ class DetailViewController: UIViewController {
         return view
     }()
     
-    let campionName: UILabel = {
+    let championName: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
@@ -44,14 +47,14 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func viewsetting(){
-        view.addSubview(viewBackground)
+        view.addSubview(backgroundImage)
         view.addSubview(campionImage)
-        view.addSubview(campionName)
+        view.addSubview(championName)
         view.addSubview(campionIp)
     }
     
     func layoutSetting(){
-        viewBackground.snp.makeConstraints { make in
+        backgroundImage.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalTo(view.safeAreaLayoutGuide)
             make.right.equalTo(view.safeAreaLayoutGuide)
@@ -59,19 +62,28 @@ class DetailViewController: UIViewController {
             
         }
         campionImage.snp.makeConstraints { make in
-            make.top.equalTo(viewBackground.snp.top).offset(20)
+            make.top.equalTo(backgroundImage.snp.top).offset(20)
             make.width.height.equalTo(100)
             make.centerX.equalTo(view)
         }
-        campionName.snp.makeConstraints { make in
+        championName.snp.makeConstraints { make in
             make.top.equalTo(campionImage.snp.bottom).offset(20)
             make.width.equalTo(50)
             make.centerX.equalTo(view)
         }
         campionIp.snp.makeConstraints { make in
-            make.top.equalTo(campionName.snp.bottom).offset(20)
+            make.top.equalTo(championName.snp.bottom).offset(20)
             make.width.equalTo(50)
             make.centerX.equalTo(view)
         }
+    }
+    
+    func setModel(model: Champion) {
+        championName.text = model.name
+        let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/champion/\(model.id).png")
+        campionImage.kf.setImage(with: url)
+        
+        let url2 = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/\(model.id)_1.jpg")
+        backgroundImage.kf.setImage(with: url2)
     }
 }

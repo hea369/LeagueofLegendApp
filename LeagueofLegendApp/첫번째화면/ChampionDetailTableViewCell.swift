@@ -31,8 +31,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
     let championTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: 12)
+        label.textColor = .gray
         return label
     }()
     
@@ -127,7 +127,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
         
         championTitle.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(20)
+            make.top.equalTo(contentView.snp.top).offset(24)
             make.left.equalTo(championName.snp.right).offset(3)
         }
         
