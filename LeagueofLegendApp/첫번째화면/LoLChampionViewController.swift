@@ -64,9 +64,10 @@ class LoLChampionViewController: UIViewController {
     //    }
     
     func navigationSetting(){
-        navigationController?.navigationBar.backgroundColor = .systemBackground
+//        self.navigationController?.isNavigationBarHidden = true
         self.navigationItem.titleView = searchBar
-        self.navigationItem.backBarButtonItem = backBarkButtonItem
+//        self.navigationItem.backBarButtonItem = backBarkButtonItem
+        navigationController?.navigationBar.backgroundColor = .red
     }
     
     func setup() {
@@ -77,7 +78,9 @@ class LoLChampionViewController: UIViewController {
         view.addSubview(tableiw)
     
         tableiw.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view)
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
+//            make.top.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
+//            make.width.height.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
 }
