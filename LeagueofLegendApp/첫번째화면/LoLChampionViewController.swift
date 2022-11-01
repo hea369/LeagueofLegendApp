@@ -20,8 +20,22 @@ class LoLChampionViewController: UIViewController {
         return tableview
     }()
     
+    let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "챔피언 검색"
+        return searchBar
+    }()
+    
+//    let backBarkButtonItem: UIBarButtonItem = {
+//        let backButton = UIBarButtonItem()
+//        backButton.title = ""
+//        backButton.setImag
+//        return backButton
+//    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationSetting()
         callAPI()
         setup()
     }
@@ -50,13 +64,19 @@ class LoLChampionViewController: UIViewController {
     //        }
     //    }
     
+    func navigationSetting(){
+        navigationController?.navigationBar.backgroundColor = .systemBackground
+        self.navigationItem.titleView = searchBar
+        self.navigationItem.backBarButtonItem = backBarkButtonItem
+    }
+    
     func setup() {
         view.backgroundColor = .systemBackground
         tableiw.delegate = self
         tableiw.dataSource = self
         tableiw.register(ChampionDetailTableViewCell.self, forCellReuseIdentifier: "ChampionDetailTableViewCell")
         view.addSubview(tableiw)
-        
+    
         tableiw.snp.makeConstraints { make in
             make.width.height.equalTo(self.view)
         }
@@ -64,6 +84,13 @@ class LoLChampionViewController: UIViewController {
 }
 
 extension LoLChampionViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "League of Legends Champion"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
     
 }
 
