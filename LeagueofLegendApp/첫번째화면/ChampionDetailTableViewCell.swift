@@ -23,7 +23,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     let championName: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 10)
+        label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .black
         label.numberOfLines = 1
         return label
@@ -32,7 +32,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     let championTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 14)
         label.textColor = .black
         label.numberOfLines = 1
         label.clipsToBounds = true
@@ -43,7 +43,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     let championSubTitle: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 14)
         label.textColor = .black
         label.numberOfLines = 1
         label.clipsToBounds = true
@@ -108,9 +108,10 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     func layoutSetting() {
         championImage.snp.makeConstraints { make in
+//            make.centerX.equalTo(contentView.snp.centerX)
             make.top.equalTo(contentView.snp.top).offset(20)
             make.width.height.equalTo(120)
-            make.left.equalTo(contentView.snp.right)
+            make.left.equalTo(contentView.snp.left).offset(20)
         }
         championName.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
@@ -118,17 +119,17 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
         
         championTitle.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(20)
-            make.left.equalTo(championName.snp.right).offset(5)
+            make.top.equalTo(championName.snp.top).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(20)
         }
         
         championSubTitle.snp.makeConstraints { make in
-            make.top.equalTo(contentView.snp.top).offset(20)
+            make.top.equalTo(championName.snp.top).offset(20)
             make.left.equalTo(championTitle.snp.right).offset(5)
         }
         
         championWinRate.snp.makeConstraints { make in
-            make.top.equalTo(championName.snp.bottom).offset(10)
+            make.top.equalTo(championTitle.snp.bottom).offset(10)
             make.width.equalTo(50)
             make.left.equalTo(championImage.snp.right).offset(20)
         }
