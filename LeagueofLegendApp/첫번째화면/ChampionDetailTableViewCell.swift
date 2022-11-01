@@ -137,8 +137,11 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
         
         championPosition2.snp.makeConstraints { make in
-            make.top.equalTo(championName.snp.top).offset(20)
-            make.left.equalTo(championImage.snp.right).offset(60)
+            if (championPosition.text != nil) == isHidden {
+                make.top.equalTo(championName.snp.top).offset(20)
+                make.left.equalTo(championPosition.snp.right).offset(5)
+            } else {
+            }
         }
         
         championWinRate.snp.makeConstraints { make in
@@ -170,7 +173,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         } else if transformTagsName.first == "서폿터" {
             model.backgroundColor = .orange
         } else {
-            model.backgroundColor = .gray
+            model.backgroundColor = .purple
         }
     }
     
@@ -186,7 +189,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         } else if transformTagsName.last == "서폿터" {
             model.backgroundColor = .orange
         } else {
-            model.backgroundColor = .gray
+            model.backgroundColor = .purple
         }
     }
     
