@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		619292292AC54A472E222804 /* Pods_LeagueofLegendApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */; };
+		D80B296729126BC400D22FFA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B296629126BC400D22FFA /* TabBarController.swift */; };
 		D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F5290A52E30077E035 /* AppDelegate.swift */; };
 		D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F7290A52E30077E035 /* SceneDelegate.swift */; };
 		D864A2FF290A52E40077E035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D864A2FE290A52E40077E035 /* Assets.xcassets */; };
@@ -17,7 +18,6 @@
 		D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A311290A5CD20077E035 /* LOLAPI.swift */; };
 		D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A319290BCDF90077E035 /* DetailViewController.swift */; };
 		D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A31D290CF1CB0077E035 /* NewsViewController.swift */; };
-		D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */; };
 		D864A324290CF8780077E035 /* SerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A323290CF8780077E035 /* SerchViewController.swift */; };
 		D864A327290CFCF00077E035 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A326290CFCEF0077E035 /* Model.swift */; };
 		D864A32A290F83460077E035 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A329290F83460077E035 /* Extension.swift */; };
@@ -27,6 +27,7 @@
 		1AE8900434B5824682721EA2 /* Pods-LeagueofLegendApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueofLegendApp.release.xcconfig"; path = "Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp.release.xcconfig"; sourceTree = "<group>"; };
 		861A84F38E71E82D3918E85C /* Pods-LeagueofLegendApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueofLegendApp.debug.xcconfig"; path = "Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueofLegendApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80B296629126BC400D22FFA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D864A2F2290A52E30077E035 /* LeagueofLegendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueofLegendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D864A2F5290A52E30077E035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D864A2F7290A52E30077E035 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		D864A311290A5CD20077E035 /* LOLAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOLAPI.swift; sourceTree = "<group>"; };
 		D864A319290BCDF90077E035 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D864A31D290CF1CB0077E035 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
 		D864A323290CF8780077E035 /* SerchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerchViewController.swift; sourceTree = "<group>"; };
 		D864A326290CFCEF0077E035 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D864A329290F83460077E035 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -73,6 +73,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D80B296529126BA200D22FFA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D80B296629126BC400D22FFA /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		D864A2E9290A52E30077E035 = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +105,7 @@
 				D864A328290F82FB0077E035 /* StringExtension */,
 				D864A325290CFCE00077E035 /* Model */,
 				D864A310290A5CC30077E035 /* API */,
-				D864A31F290CF4AA0077E035 /* TabBar */,
+				D80B296529126BA200D22FFA /* TabBar */,
 				D864A309290A59010077E035 /* FirstPage */,
 				D864A31C290CF19D0077E035 /* SecondPage */,
 				D864A322290CF8310077E035 /* ThirdPage */,
@@ -145,14 +153,6 @@
 			);
 			name = SecondPage;
 			path = "두번째화면";
-			sourceTree = "<group>";
-		};
-		D864A31F290CF4AA0077E035 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				D864A320290CF4DE0077E035 /* CustomTabBarViewController.swift */,
-			);
-			path = TabBar;
 			sourceTree = "<group>";
 		};
 		D864A322290CF8310077E035 /* ThirdPage */ = {
@@ -296,7 +296,7 @@
 			files = (
 				D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */,
 				D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */,
-				D864A321290CF4DE0077E035 /* CustomTabBarViewController.swift in Sources */,
+				D80B296729126BC400D22FFA /* TabBarController.swift in Sources */,
 				D864A312290A5CD20077E035 /* LOLAPI.swift in Sources */,
 				D864A32A290F83460077E035 /* Extension.swift in Sources */,
 				D864A31A290BCDF90077E035 /* DetailViewController.swift in Sources */,

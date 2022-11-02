@@ -15,7 +15,7 @@ class LoLChampionViewController: UIViewController {
     
     var modelDum: [Champion] = []
     
-    let tableiw: UITableView = {
+    let tableView: UITableView = {
         let tableview = UITableView()
         return tableview
     }()
@@ -34,14 +34,16 @@ class LoLChampionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationSetting()
+
+        tabBarController?.title = "탭바 타이틀"
+        navigationController?.isNavigationBarHidden = false
         callAPI()
         setup()
+        navigationSetting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     func callAPI(){
@@ -51,7 +53,7 @@ class LoLChampionViewController: UIViewController {
             let model = try! JSONDecoder().decode(LOLChampion.self, from: data)
             self.model = model
             self.modelDum = Array(model.data.values)
-            self.tableiw.reloadData()
+            self.tableView.reloadData()
         }
     }
     
@@ -64,23 +66,22 @@ class LoLChampionViewController: UIViewController {
     //    }
     
     func navigationSetting(){
-//        self.navigationController?.isNavigationBarHidden = true
         self.navigationItem.titleView = searchBar
 //        self.navigationItem.backBarButtonItem = backBarkButtonItem
-        navigationController?.navigationBar.backgroundColor = .red
+//        navigationController?.navigationBar.backgroundColor = .red
+//        navigationController?.isNavigationBarHidden = true
     }
     
     func setup() {
         view.backgroundColor = .systemBackground
-        tableiw.delegate = self
-        tableiw.dataSource = self
-        tableiw.register(ChampionDetailTableViewCell.self, forCellReuseIdentifier: "ChampionDetailTableViewCell")
-        view.addSubview(tableiw)
-    
-        tableiw.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide).inset(0)
-//            make.top.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
-//            make.width.height.equalTo(self.view.safeAreaLayoutGuide)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ChampionDetailTableViewCell.self, forCellReuseIdentifier: "ChampionDetailTableViewCell")
+        view.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }

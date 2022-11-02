@@ -18,13 +18,6 @@ class DetailViewController: UIViewController {
         return view
     }()
     
-    let backButton: UIButton = {
-       let button = UIButton()
-        button.alpha = 1.0
-        button.setImage(UIImage(systemName: "star"), for: .normal)
-        return button
-    }()
-    
     let campionImage: UIImageView = {
         let view = UIImageView()
         return view
@@ -47,11 +40,9 @@ class DetailViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .yellow
         viewsetting()
         layoutSetting()
-        backButton.addTarget(self, action: #selector(viewtransform), for: .touchUpInside)
-        // Do any additional setup after loading the view.
     }
     
     @objc func viewtransform(){
@@ -64,7 +55,6 @@ class DetailViewController: UIViewController {
         view.addSubview(campionImage)
         view.addSubview(championName)
         view.addSubview(campionIp)
-        view.addSubview(backButton)
     }
     
     func layoutSetting(){
@@ -73,12 +63,6 @@ class DetailViewController: UIViewController {
             make.left.equalTo(self.view.safeAreaLayoutGuide)
             make.right.equalTo(self.view.safeAreaLayoutGuide)
             make.height.equalTo(300)
-            
-        }
-        
-        backButton.snp.makeConstraints { make in
-            make.top.equalTo(backgroundImage.snp.top).offset(50)
-            make.left.equalTo(backgroundImage.safeAreaLayoutGuide).offset(40)
             
         }
         
