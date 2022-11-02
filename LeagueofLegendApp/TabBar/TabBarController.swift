@@ -15,8 +15,8 @@ class MainTabBarController: UITabBarController {
         self.tabBar.backgroundColor = UIColor.white
         
         let firstNC = UINavigationController.init(rootViewController: LoLChampionViewController())
-        let secondNC = UINavigationController.init(rootViewController: DetailViewController())
-        let thirdNC = UINavigationController.init(rootViewController: NewsViewController())
+        let secondNC = UINavigationController.init(rootViewController: NewsViewController())
+        let thirdNC = UINavigationController.init(rootViewController: SerchViewController())
         
         self.viewControllers = [firstNC,secondNC,thirdNC]
         
