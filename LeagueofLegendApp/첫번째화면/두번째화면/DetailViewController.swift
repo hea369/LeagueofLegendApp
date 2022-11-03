@@ -68,7 +68,9 @@ class DetailViewController: UIViewController {
     lazy var leftButton: UIButton = {
         let button = UIButton()
         button.setTitle("나무위키", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.setTitleColor(.black, for: UIControl.State.normal)
+        button.layer.borderColor = UIColor.red.cgColor
         return button
     }()
     
@@ -76,6 +78,8 @@ class DetailViewController: UIViewController {
         let button = UIButton()
         button.setTitle("인벤공략", for: .normal)
         button.setTitleColor(.black, for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.layer.borderColor = UIColor.red.cgColor
         return button
     }()
     
@@ -83,16 +87,18 @@ class DetailViewController: UIViewController {
         let button = UIButton()
         button.setTitle("카운터픽", for: .normal)
         button.setTitleColor(.black, for: UIControl.State.normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.layer.borderColor = UIColor.red.cgColor
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .systemBackground
+    
         viewsetting()
         layoutSetting()
         buttonActionSetting()
+        backgroundView.backgroundColor = .white
     }
     
     @objc func viewtransform(){
@@ -131,7 +137,7 @@ class DetailViewController: UIViewController {
         }
         
         campionImage.snp.makeConstraints { make in
-            make.top.equalTo(backgroundImage.snp.top).offset(50)
+            make.top.equalTo(backgroundImage.snp.top).offset(100)
             make.width.height.equalTo(100)
             make.centerX.equalTo(view)
         }

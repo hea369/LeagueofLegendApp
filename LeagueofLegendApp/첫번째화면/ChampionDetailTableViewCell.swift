@@ -184,8 +184,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
         guideButton.snp.makeConstraints { make in
             make.centerY.equalTo(championImage.snp.centerY)
             make.right.equalTo(-15)
-            make.width.equalTo(100)
-            make.height.equalTo(100)
+            make.width.equalTo(50)
+            make.height.equalTo(20)
         }
         guideLabel.snp.makeConstraints { make in
             make.centerY.equalTo(championImage.snp.centerY)
