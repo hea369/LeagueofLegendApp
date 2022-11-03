@@ -13,7 +13,6 @@ class ChampionDetailTableViewCell: UITableViewCell {
     var tagsName: [String] = []
     var transformTagsName: [String] = []
     
-    // 이미지뷰1, 레이블7, 막대그래프 3
     let championImage: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .red
@@ -84,6 +83,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
         
     }
     
@@ -115,6 +115,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     }
     
     func layoutSetting() {
+        
         championImage.snp.makeConstraints { make in
 //            make.centerX.equalTo(contentView.snp.centerX)
             make.top.equalTo(contentView.snp.top).offset(20)

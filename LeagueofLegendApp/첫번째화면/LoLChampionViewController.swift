@@ -80,8 +80,7 @@ class LoLChampionViewController: UIViewController {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top)
-            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
