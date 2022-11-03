@@ -45,6 +45,9 @@ class DetailViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         label.textColor = .white
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 0, height: 2)
+        label.layer.shadowOpacity = 1
         return label
     }()
     
@@ -54,6 +57,9 @@ class DetailViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textColor = .white
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 0, height: 2)
+        label.layer.shadowOpacity = 1
         return label
     }()
     
@@ -92,6 +98,30 @@ class DetailViewController: UIViewController {
         return button
     }()
     
+    let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemFill
+        return view
+    }()
+    
+    let story: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .boldSystemFont(ofSize: 20)
+        label.numberOfLines = 0
+        label.textColor = .black
+        return label
+    }()
+    
+    let backgroudStory: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.font = .boldSystemFont(ofSize: 14)
+        label.numberOfLines = 0
+        label.textColor = .black
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -117,6 +147,9 @@ class DetailViewController: UIViewController {
         scrollView.addSubview(leftButton)
         scrollView.addSubview(centerButton)
         scrollView.addSubview(rightButton)
+        scrollView.addSubview(lineView)
+        scrollView.addSubview(story)
+        scrollView.addSubview(backgroudStory)
     }
     
     func layoutSetting(){
@@ -127,7 +160,7 @@ class DetailViewController: UIViewController {
         backgroundView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.centerX.top.bottom.equalToSuperview()
-            make.height.equalTo(1500)
+            make.height.equalTo(1000)
         }
         
         backgroundImage.snp.makeConstraints { make in
@@ -174,6 +207,23 @@ class DetailViewController: UIViewController {
             make.top.equalTo(backgroundImage.snp.bottom).offset(20)
             make.right.equalTo(backgroundView.snp.right).offset(-40)
         }
+        
+        lineView.snp.makeConstraints { make in
+            make.top.equalTo(rightButton.snp.bottom).offset(20)
+            make.height.equalTo(5)
+            make.left.right.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        story.snp.makeConstraints { make in
+            make.top.equalTo(lineView.snp.bottom).offset(20)
+            make.left.equalTo(view.snp.left).offset(20)
+        }
+        
+        backgroudStory.snp.makeConstraints { make in
+            make.top.equalTo(story.snp.bottom).offset(20)
+            make.left.equalTo(view.snp.left).offset(20)
+            make.right.equalTo(view.snp.right).offset(-20)
+        }
     }
 
     func buttonActionSetting(){
@@ -214,6 +264,8 @@ class DetailViewController: UIViewController {
         
         championName.text = "\(model.name),"
         championSubName.text = model.title
+        story.text = "배경이야기"
+        backgroudStory.text = model.blurb
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/champion/\(model.id).png")
         campionImage.kf.setImage(with: url)
         

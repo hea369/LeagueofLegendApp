@@ -205,7 +205,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     func labelBackgroundColor(model: UILabel){
         print(tagsName)
         if transformTagsName.first == "전사"{
-            model.backgroundColor = .yellow
+            model.backgroundColor = .orange
         } else if transformTagsName.first == "탱커" {
             model.backgroundColor = .purple
         } else if transformTagsName.first == "마법사" {
@@ -221,7 +221,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     func labelBackgroundColor2(model: UILabel){
         if transformTagsName.last == "전사"{
-            model.backgroundColor = .yellow
+            model.backgroundColor = .orange
         } else if transformTagsName.last == "탱커" {
             model.backgroundColor = .purple
         } else if transformTagsName.last == "마법사" {
