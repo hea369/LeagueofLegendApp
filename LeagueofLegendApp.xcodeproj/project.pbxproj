@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		619292292AC54A472E222804 /* Pods_LeagueofLegendApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */; };
 		D80B296729126BC400D22FFA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B296629126BC400D22FFA /* TabBarController.swift */; };
+		D80B29692913D36900D22FFA /* NewsViewDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80B29682913D36900D22FFA /* NewsViewDetailTableViewCell.swift */; };
 		D864A2F6290A52E30077E035 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F5290A52E30077E035 /* AppDelegate.swift */; };
 		D864A2F8290A52E30077E035 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D864A2F7290A52E30077E035 /* SceneDelegate.swift */; };
 		D864A2FF290A52E40077E035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D864A2FE290A52E40077E035 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		861A84F38E71E82D3918E85C /* Pods-LeagueofLegendApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueofLegendApp.debug.xcconfig"; path = "Target Support Files/Pods-LeagueofLegendApp/Pods-LeagueofLegendApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9918A988A923350A3504783D /* Pods_LeagueofLegendApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueofLegendApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80B296629126BC400D22FFA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D80B29682913D36900D22FFA /* NewsViewDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D864A2F2290A52E30077E035 /* LeagueofLegendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueofLegendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D864A2F5290A52E30077E035 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D864A2F7290A52E30077E035 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D864A31D290CF1CB0077E035 /* NewsViewController.swift */,
+				D80B29682913D36900D22FFA /* NewsViewDetailTableViewCell.swift */,
 			);
 			name = SecondPage;
 			path = "두번째화면";
@@ -304,6 +307,7 @@
 				D864A324290CF8780077E035 /* SerchViewController.swift in Sources */,
 				D864A31E290CF1CC0077E035 /* NewsViewController.swift in Sources */,
 				D864A30B290A59770077E035 /* LoLChampionViewController.swift in Sources */,
+				D80B29692913D36900D22FFA /* NewsViewDetailTableViewCell.swift in Sources */,
 				D864A30F290A5A370077E035 /* ChampionDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
