@@ -36,6 +36,7 @@ class LoLChampionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.navigationBar.topItem?.title = ""
         callAPI()
         setup()
         navigationSetting()
