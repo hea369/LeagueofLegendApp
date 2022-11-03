@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import WebKit
 
 class ChampionDetailTableViewCell: UITableViewCell {
     
@@ -15,7 +16,6 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     let championImage: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .red
         return view
     }()
     
@@ -23,7 +23,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .black
+        label.textColor = .systemBackground
         return label
     }()
     
@@ -31,7 +31,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 12)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
     
@@ -81,10 +81,28 @@ class ChampionDetailTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var guideButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("", for: .normal)
+        button.setTitleColor(.black, for: UIControl.State.normal)
+        button.backgroundColor = .white
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.green.cgColor
+        return button
+    }()
+    
+    let guideLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 12)
+        label.textColor = .green
+        label.numberOfLines = 1
+        label.text = "공략보기"
+        return label
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -95,6 +113,8 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.guideButton.addTarget(self, action: #selector(centerButtontouch), for: .touchUpInside)
         addView()
         layoutSetting()
     }
@@ -112,12 +132,13 @@ class ChampionDetailTableViewCell: UITableViewCell {
         addSubview(championTitle)
         addSubview(championPosition)
         addSubview(championPosition2)
+        contentView.addSubview(guideButton)
+        addSubview(guideLabel)
     }
     
     func layoutSetting() {
         
         championImage.snp.makeConstraints { make in
-//            make.centerX.equalTo(contentView.snp.centerX)
             make.top.equalTo(contentView.snp.top).offset(20)
             make.width.height.equalTo(120)
             make.left.equalTo(contentView.snp.left).offset(20)
@@ -160,38 +181,57 @@ class ChampionDetailTableViewCell: UITableViewCell {
             make.width.equalTo(50)
             make.left.equalTo(championImage.snp.right).offset(20)
         }
+        guideButton.snp.makeConstraints { make in
+            make.centerY.equalTo(championImage.snp.centerY)
+            make.right.equalTo(-15)
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+        }
+        guideLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(championImage.snp.centerY)
+            make.right.equalTo(-20)
+        }   
+    }
+    
+    @objc func centerButtontouch(){
+        guard let transformURL = URL(string: "https://m.inven.co.kr/site/lol/champ.php?iskin=lol"),UIApplication.shared.canOpenURL(transformURL) else { return }
+        UIApplication.shared.open(transformURL, options: [:], completionHandler: nil)
+    }
+    
+    @objc func buttonAction(){
+        print("button")
     }
     
     func labelBackgroundColor(model: UILabel){
         print(tagsName)
         if transformTagsName.first == "전사"{
-            model.backgroundColor = .blue
+            model.backgroundColor = .yellow
         } else if transformTagsName.first == "탱커" {
-            model.backgroundColor = .red
-        } else if transformTagsName.first == "마법사" {
-            model.backgroundColor = .green
-        } else if transformTagsName.first == "암살자" {
-            model.backgroundColor = .gray
-        } else if transformTagsName.first == "서폿터" {
-            model.backgroundColor = .orange
-        } else {
             model.backgroundColor = .purple
+        } else if transformTagsName.first == "마법사" {
+            model.backgroundColor = .blue
+        } else if transformTagsName.first == "암살자" {
+            model.backgroundColor = .red
+        } else if transformTagsName.first == "서폿터" {
+            model.backgroundColor = .green
+        } else {
+            model.backgroundColor = .gray
         }
     }
     
     func labelBackgroundColor2(model: UILabel){
         if transformTagsName.last == "전사"{
-            model.backgroundColor = .blue
+            model.backgroundColor = .yellow
         } else if transformTagsName.last == "탱커" {
-            model.backgroundColor = .red
-        } else if transformTagsName.last == "마법사" {
-            model.backgroundColor = .green
-        } else if transformTagsName.last == "암살자" {
-            model.backgroundColor = .gray
-        } else if transformTagsName.last == "서폿터" {
-            model.backgroundColor = .orange
-        } else {
             model.backgroundColor = .purple
+        } else if transformTagsName.last == "마법사" {
+            model.backgroundColor = .blue
+        } else if transformTagsName.last == "암살자" {
+            model.backgroundColor = .red
+        } else if transformTagsName.last == "서폿터" {
+            model.backgroundColor = .green
+        } else {
+            model.backgroundColor = .gray
         }
     }
     
@@ -218,4 +258,5 @@ class ChampionDetailTableViewCell: UITableViewCell {
         championImage.kf.setImage(with: url)
         
     }
+    
 }

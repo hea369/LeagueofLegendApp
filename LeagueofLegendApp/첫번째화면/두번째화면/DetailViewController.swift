@@ -25,14 +25,12 @@ class DetailViewController: UIViewController {
         
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemBackground
-        //        scrollView.showsVerticalScrollIndicator = false
-        //        scrollView.showsHorizontalScrollIndicator = false
         return scrollView
     }()
     
     lazy var backgroundImage: UIImageView = {
         let view = UIImageView()
-        view.alpha = 0.5
+        view.alpha = 0.9
         return view
     }()
     
@@ -46,16 +44,16 @@ class DetailViewController: UIViewController {
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
     
     let championSubName: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = .boldSystemFont(ofSize: 20)
+        label.font = .boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
     
@@ -63,7 +61,7 @@ class DetailViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 10)
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
     
@@ -90,10 +88,6 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //        scrollView.minimumZoomScale = 1.0
-        //        scrollView.maximumZoomScale = 10.0
-        //        scrollView.delegate = self
         
         view.backgroundColor = .systemBackground
         viewsetting()
@@ -143,13 +137,13 @@ class DetailViewController: UIViewController {
         }
 
         championName.snp.makeConstraints { make in
-            make.top.equalTo(campionImage.snp.top).offset(10)
-            make.right.equalTo(championSubName.snp.left)
+            make.top.equalTo(campionImage.snp.bottom).offset(10)
+            make.trailing.equalTo(view.snp.centerX).offset(-2)
         }
 
         championSubName.snp.makeConstraints { make in
-            make.top.equalTo(campionImage.snp.top).offset(10)
-            make.left.equalTo(championName.snp.right)
+            make.top.equalTo(campionImage.snp.bottom).offset(14)
+            make.leading.equalTo(view.snp.centerX).offset(2)
         }
         
         campionIp.snp.makeConstraints { make in
@@ -212,7 +206,7 @@ class DetailViewController: UIViewController {
     func setModel(model: Champion) {
         namuwikiModel.append(model.name)
         
-        championName.text = model.name
+        championName.text = "\(model.name),"
         championSubName.text = model.title
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.20.1/img/champion/\(model.id).png")
         campionImage.kf.setImage(with: url)

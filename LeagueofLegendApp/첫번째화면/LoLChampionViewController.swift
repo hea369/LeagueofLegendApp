@@ -17,6 +17,7 @@ class LoLChampionViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableview = UITableView()
+        tableview.backgroundColor = .white
         return tableview
     }()
     
@@ -35,8 +36,6 @@ class LoLChampionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tabBarController?.title = "탭바 타이틀"
-        navigationController?.isNavigationBarHidden = false
         callAPI()
         setup()
         navigationSetting()
@@ -80,7 +79,7 @@ class LoLChampionViewController: UIViewController {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
@@ -103,11 +102,14 @@ extension LoLChampionViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChampionDetailTableViewCell") as? ChampionDetailTableViewCell else { return UITableViewCell() }
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         
         let championInfo = modelDum[indexPath.row]
         cell.setModel(model: championInfo)
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
