@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
         
         let firstNC = UINavigationController.init(rootViewController: LoLChampionViewController())
         let secondNC = UINavigationController.init(rootViewController: NewsViewController())
-        let thirdNC = UINavigationController.init(rootViewController: SerchViewController())
+        let thirdNC = UINavigationController.init(rootViewController: SearchViewController())
         
         self.viewControllers = [firstNC,secondNC,thirdNC]
         
