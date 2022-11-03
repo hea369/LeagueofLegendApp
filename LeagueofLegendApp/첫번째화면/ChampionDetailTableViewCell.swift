@@ -163,6 +163,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     }
     
     func labelBackgroundColor(model: UILabel){
+        print(tagsName)
         if transformTagsName.first == "전사"{
             model.backgroundColor = .blue
         } else if transformTagsName.first == "탱커" {
@@ -215,5 +216,6 @@ class ChampionDetailTableViewCell: UITableViewCell {
         championTitle.text = model.title
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
         championImage.kf.setImage(with: url)
+        
     }
 }
