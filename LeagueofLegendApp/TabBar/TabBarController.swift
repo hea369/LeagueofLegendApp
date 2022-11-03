@@ -20,9 +20,9 @@ class MainTabBarController: UITabBarController {
         
         self.viewControllers = [firstNC,secondNC,thirdNC]
         
-        let firstTabBarItem = UITabBarItem(title: "첫번째", image: UIImage(systemName: "house"), tag: 0)
-        let secondTabBarItem = UITabBarItem(title: "두번째", image: UIImage(systemName: "book"), tag: 1)
-        let thirtdTabBarItem = UITabBarItem(title: "세번째", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+        let firstTabBarItem = UITabBarItem(title: "챔피언", image: UIImage(systemName: "house"), tag: 0)
+        let secondTabBarItem = UITabBarItem(title: "뉴스", image: UIImage(systemName: "book"), tag: 1)
+        let thirtdTabBarItem = UITabBarItem(title: "전적검색", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         
         firstNC.tabBarItem = firstTabBarItem
         secondNC.tabBarItem = secondTabBarItem

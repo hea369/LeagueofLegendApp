@@ -23,7 +23,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .systemBackground
+        label.textColor = .black
         return label
     }()
     
@@ -102,7 +102,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -134,13 +134,17 @@ class ChampionDetailTableViewCell: UITableViewCell {
         addSubview(championPosition2)
         contentView.addSubview(guideButton)
         addSubview(guideLabel)
+        addSubview(championWinRate)
+        addSubview(championPickRate)
+        addSubview(championBanRate)
     }
     
     func layoutSetting() {
         
         championImage.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
-            make.width.height.equalTo(120)
+            make.height.equalTo(120)
+            make.width.equalTo(150)
             make.left.equalTo(contentView.snp.left).offset(20)
         }
         championName.snp.makeConstraints { make in
@@ -167,19 +171,19 @@ class ChampionDetailTableViewCell: UITableViewCell {
         }
         
         championWinRate.snp.makeConstraints { make in
-            make.top.equalTo(championTitle.snp.bottom).offset(10)
+            make.top.equalTo(championTitle.snp.bottom).offset(35)
             make.width.equalTo(50)
-            make.left.equalTo(championImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(10)
         }
         championPickRate.snp.makeConstraints { make in
             make.top.equalTo(championWinRate.snp.bottom).offset(10)
             make.width.equalTo(50)
-            make.left.equalTo(championImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(10)
         }
         championBanRate.snp.makeConstraints { make in
             make.top.equalTo(championPickRate.snp.bottom).offset(10)
             make.width.equalTo(50)
-            make.left.equalTo(championImage.snp.right).offset(20)
+            make.left.equalTo(championImage.snp.right).offset(10)
         }
         guideButton.snp.makeConstraints { make in
             make.centerY.equalTo(championImage.snp.centerY)
@@ -190,7 +194,7 @@ class ChampionDetailTableViewCell: UITableViewCell {
         guideLabel.snp.makeConstraints { make in
             make.centerY.equalTo(championImage.snp.centerY)
             make.right.equalTo(-20)
-        }   
+        }
     }
     
     @objc func centerButtontouch(){
@@ -203,7 +207,6 @@ class ChampionDetailTableViewCell: UITableViewCell {
     }
     
     func labelBackgroundColor(model: UILabel){
-        print(tagsName)
         if transformTagsName.first == "전사"{
             model.backgroundColor = .orange
         } else if transformTagsName.first == "탱커" {
@@ -257,6 +260,9 @@ class ChampionDetailTableViewCell: UITableViewCell {
         let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(model.id)_0.jpg")
         championImage.kf.setImage(with: url)
         
+        championWinRate.text = "승률"
+        championPickRate.text = "픽률"
+        championBanRate.text = "벤률"
     }
     
 }
